@@ -165,14 +165,50 @@
 
         
         <a href="/2019/11/25/vue简单知识点/" class="archive-article-date">
-  	<time datetime="2019-11-25T14:28:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-25</time>
+  	<time datetime="2019-11-25T14:41:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><strong>1、对于Vue是一套渐进式框架的理解</strong></p>
+<p>Vue 核心功能是一个视图模板引擎，可以通过添加组件系统、客户端路由、大规模状态管理来构建一个完整的框架。可以在核心功能的基础上任意选用其他的部件。这就是“渐进式”，就是 Vue 的使用方式。</p>
+<p><strong>2、vue.js的两个核心是什么？</strong></p>
+<p><strong><img src="http://www.veryhuo.com/uploads/image/20190620/1560999533805038.png" alt="vhx.png"></strong></p>
+<p><strong>3、请问 v-if 和 v-show 有什么区别？</strong></p>
+<p>v-if 判断条件是否渲染，是惰性的，初始渲染时条件为假时什么也不做；</p>
+<p>v-show是 display: block/none;元素始终都会渲染；在项目中如果需要频繁的切换则使用v-show较好，运行条件很少改变，则使用v-if。</p>
+<p><strong>4、vue常用的修饰符</strong></p>
+<p><img src="http://www.veryhuo.com/uploads/image/20190620/1560999609707442.png" alt="vxsf.png"></p>
+<p><strong>5、vue中 key 值的作用</strong></p>
+<p>v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。</p>
+<p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key 属性。理想的 key 值是每项都有的唯一 id。主要是为了高效的更新虚拟DOM。</p>
+<p><strong>6、$nextTick的使用：</strong></p>
+<p>在修改数据之后立即使用这个方法，获取更新后的 DOM。</p>
+<p><strong>7、Vue 组件中 data 为什么必须是函数？</strong></p>
+<p>每用一次组件，就会有一个新实例被创建。每个实例可以维护一份被返回对象的独立的拷贝，每个对象都是独立互不影响的。</p>
+<p><strong>8、v-for 与 v-if 的优先级</strong></p>
+<p>v-for 具有比 v-if 更高的优先级。</p>
+<p>v-if 将分别重复运行于每个 v-for 循环中。vue风格指南提示永远不要把 v-if 和 v-for 同时用在同一个元素上。</p>
+<p><strong>9、vue中子组件调用父组件的方法</strong></p>
+<p><strong><img src="http://www.veryhuo.com/uploads/image/20190620/1560999763958016.png" alt="vfzj.png"></strong></p>
+<p><strong>10、vue中 keep-alive 组件的作用</strong></p>
+<p>keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。</p>
+<p>include(包含的组件缓存) 与 exclude(排除的组件不缓存，优先级大于include) 。</p>
+<p>include - 字符串或正则表达式，只有名称匹配的组件会被缓存；</p>
+<p>exclude 反之亦然。 include=”a,b” :include=”/a|b/“ :include=”[‘a’, ‘b’]”</p>
+<p><strong>11、vue中如何编写可复用的组件？</strong></p>
+<p>规范化命名：组件的命名应该跟业务无关，而是依据组件的功能命名。</p>
+<p>数据扁平化：定义组件接口时，尽量不要将整个对象作为一个 prop 传进来。每个 prop 应该是一个简单类型的数据。这样做有下列几点好处：</p>
+<p>(1) 组件接口清晰。</p>
+<p>(2) props 校验方便。</p>
+<p>(3) 当服务端返回的对象中的 key 名称与组件接口不一样时，不需要重新构造一个对象。</p>
+<p>可复用组件只实现 UI 相关的功能，即展示、交互、动画，如何获取数据跟它无关，因此不要在组件内部去获取数据。</p>
+<p>可复用组件应尽量减少对外部条件的依赖。</p>
+<p>组件在功能独立的前提下应该尽量简单，越简单的组件可复用性越强。</p>
+<p>组件应具有一定的容错性。</p>
+
       
 
       
